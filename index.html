@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>mpvue demo</title>
+  <meta name="description" content="mpvue"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="msapplication-tap-highlight" content="no">
+  <script type="text/javascript"
+          src="//webapi.amap.com/maps?v=1.4.1&key=60d44e12edf51161877baac278110500&plugin=AMap.Driving,AMap.MouseTool,AMap.Geocoder,AMap.RangingTool,AMap.ToolBar"></script>
+  <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11" defer=""></script>
+</head>
+<script>
+  // 根据设计稿的宽度来传参 比如640 750 1125
+  (function (designWidth) {
+    if (/Android(?:\s+|\/)(\d+\.\d+)?/.test(navigator.userAgent)) {
+      var version = parseFloat(RegExp.$1)
+      if (version > 2.3) {
+        var phoneScale = parseInt(window.screen.width) / designWidth
+        document.write('<meta name="viewport" content="width=' + designWidth + ',minimum-scale=' + phoneScale + ',maximum-scale=' + phoneScale + ', target-densitydpi=device-dpi,user-scalable=no">')
+      } else {
+        document.write('<meta name="viewport" content="width=' + designWidth + ',target-densitydpi=device-dpi,user-scalable=no">')
+      }
+    } else {
+      document.write('<meta name="viewport" content="width=' + designWidth + ',user-scalable=no,target-densitydpi=device-dpi,minimal-ui,viewport-fit=cover">')
+    }
+  })(380)
+</script>
+<body>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>

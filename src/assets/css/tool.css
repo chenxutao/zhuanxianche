@@ -1,0 +1,111 @@
+/*公共样式*/
+.tool-home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.tool-home .tool-home-content {
+  flex-shrink: 1;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.tool-home .tool-home-banner {
+  height: 80px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  margin-top: 10px;
+  /*border-radius: 3px;*/
+  overflow: hidden;
+}
+
+.tool-home .tool-home-banner-business {
+  height: 40px;
+}
+
+.tool-bg {
+  background: #f2f2f2;
+}
+
+.tool-nav {
+  box-sizing: border-box;
+  display: flex;
+  padding: 0 12px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(6, 194, 204, 1);
+  color: #fff;
+  height: 48px;
+}
+
+.too-required::before {
+  content: '*';
+  color: red;
+  margin-right: 2px;
+  font-size: 10px;
+  vertical-align: top;
+}
+
+.tool-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .5);
+  z-index: 100;
+}
+
+.tool-text-ellipsis { /* 单行省略号 */
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tool-textarea-ellipsis { /* 多行省略号 */
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+image, img {
+  display: block;
+}
+
+div, view {
+  text-align: left;
+  -webkit-overflow-scrolling: touch;
+}
+
+button::after {
+  border: none;
+}
+
+input {
+  outline: none;
+  border: none;
+  list-style: none;
+}
+
+/* 提示框 */
+.tool-message-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  padding: 12px 20px;
+  max-width: 80vw;
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+  background: rgba(0, 0, 0, .75);
+}
